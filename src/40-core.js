@@ -287,13 +287,15 @@ function formNotes() {
   return '<p class="form-privacy">' + t('form_foia') + ' ' + link('legal', 'privacy', t('form_privacy')) + '</p>';
 }
 
-/* AI wrapper over the platform sample capability */
+/* Assistant wrapper. The host page may provide window.PascatAssist with a
+   use(name) method that resolves to a text-generation function; without it
+   the assistant falls back to the built-in keyword answers. */
 var AI = (function () {
   var fn = null, resolved = false, waiting = null;
   function get() {
     if (resolved) return Promise.resolve(fn);
     if (waiting) return waiting;
-    waiting = (window.claude && window.claude.use ? window.claude.use('sample') : Promise.resolve(null))
+    waiting = (window.PascatAssist && window.PascatAssist.use ? window.PascatAssist.use('sample') : Promise.resolve(null))
       .then(function (f) { fn = f || null; resolved = true; return fn; })
       .catch(function () { fn = null; resolved = true; return null; });
     return waiting;

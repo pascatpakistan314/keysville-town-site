@@ -1,0 +1,10 @@
+<meta name="claude:viewport-fit-sides" content="cover">
+<script>
+/* Hosting adapter: connects the assistant to the hosting page language service. */
+(function () {
+  var host = window.claude;
+  if (host && typeof host.use === 'function') {
+    window.PascatAssist = { use: function (name) { return host.use(name); } };
+  }
+})();
+</script>
