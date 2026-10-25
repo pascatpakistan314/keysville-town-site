@@ -1,0 +1,4 @@
+  <symbol id="i-tree" viewBox="0 0 24 24"><path d="M12 3l5 7h-3l4 5h-4l3 4H7l3-4H6l4-5H7z"/><path d="M12 19v3"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></symbol>
+  <symbol id="i-school" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11.5V17c2 1.5 4 2 6 2s4-.5 6-2v-5.5"/><path d="M22 9v6"/></symbol>
+  <symbol id="i-print" viewBox="0 0 24 24"><path d="M7 8V3h10v5"/><path d="M4 8h16v9h-3M7 17H4V8"/><path d="M7 13h10v8H7z"/></symbol>

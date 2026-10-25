@@ -1,0 +1,62 @@
+/* Help me: the floating button, the panel, the Start brief and the guide page. */
+.hm-fab { right: max(12px, env(safe-area-inset-right, 0px)); bottom: max(12px, env(safe-area-inset-bottom, 0px)); min-height: 52px; }
+.hm-scrim { position: fixed; inset: 0; z-index: 60; background: rgba(20, 30, 26, 0.35); }
+.hm-panel { position: fixed; right: max(12px, env(safe-area-inset-right, 0px)); bottom: max(12px, env(safe-area-inset-bottom, 0px)); z-index: 61; width: min(27rem, calc(100vw - 24px)); max-height: calc(100vh - 24px); overflow: auto; background: var(--surface); color: var(--fg); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); padding: 1.1rem 1.2rem 1.3rem; display: flex; flex-direction: column; gap: 1.1rem; }
+@media (max-width: 40rem) {
+  .hm-panel { right: 0; bottom: 0; left: 0; width: auto; max-height: 92vh; border-radius: 14px 14px 0 0; border-bottom: 0; padding-left: var(--gutter); padding-right: var(--gutter-r); }
+}
+.hm-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.6rem; }
+.hm-head h2 { font-size: var(--fs-3); font-family: var(--body); }
+.hm-head h2:focus { outline: 3px solid var(--focus); outline-offset: 2px; }
+.hm-sec h3 { font-family: var(--body); font-size: var(--fs-0); text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-bottom: 0.45rem; }
+.hm-sec h3:focus { outline: 3px solid var(--focus); outline-offset: 2px; }
+.hm-sum p + p { margin-top: 0.4rem; }
+.hm-actions { display: flex; flex-direction: column; gap: 0.4rem; }
+.hm-actions .btn { width: 100%; justify-content: flex-start; text-align: left; }
+.hm-actions .btn .ico { flex-shrink: 0; }
+.hm-confirm { margin-top: 0.7rem; padding: 0.9rem 1rem; border-radius: var(--r); background: var(--gold-soft); color: var(--on-gold); display: flex; flex-direction: column; gap: 0.7rem; }
+.hm-confirm .btn { background: var(--surface); }
+.hm-confirm .btn-primary { background: var(--pine); color: var(--on-pine); }
+.hm-log { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 0.7rem; max-height: 18rem; overflow: auto; }
+.hm-turn { padding: 0.65rem 0.85rem; border-radius: var(--r); background: var(--surface-2); font-size: var(--fs-0); line-height: 1.5; }
+.hm-turn-user { background: var(--pine-soft); color: var(--pine-ink); align-self: flex-end; max-width: 90%; }
+.hm-turn p + p, .hm-turn ol + p, .hm-turn p + ol { margin-top: 0.4rem; }
+.hm-turn ol { padding-left: 1.4em; }
+.hm-turn li + li { margin-top: 0.25rem; }
+.hm-ask .textarea { min-height: 4.5rem; }
+.hm-links { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.hm-link { display: inline-flex; align-items: center; min-height: var(--target); padding: 0.3rem 0.85rem; border: 1px solid var(--line); border-radius: 999px; text-decoration: none; font-weight: 600; font-size: var(--fs-0); color: var(--pine-ink); background: var(--surface); }
+.hm-link:hover { background: var(--pine-soft); border-color: var(--pine); }
+.hm-showme { font-weight: 700; }
+.hm-broken { border-top: 1px solid var(--line-soft); padding-top: 0.8rem; font-size: var(--fs-0); }
+.hm-broken p { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+.hm-broken-form { padding-top: 0.2rem; }
+
+/* Start screen brief */
+.hm-brief { display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: 1.5rem; border-color: var(--pine); }
+.hm-brief-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.6rem; }
+.hm-brief .hm-sum { font-size: var(--fs-2); max-width: 70ch; }
+
+/* Guide page */
+.hm-print { margin-bottom: 1.25rem; max-width: 72ch; }
+.hm-guide { display: flex; flex-direction: column; gap: 1.25rem; max-width: 72ch; }
+.hm-toc ol { padding-left: 1.4em; columns: 2 14rem; column-gap: 2rem; }
+.hm-toc li { margin-top: 0.3rem; break-inside: avoid; }
+.hm-toc a { display: inline-flex; align-items: center; min-height: var(--target); font-weight: 600; }
+.hm-gsec { display: flex; flex-direction: column; gap: 0.8rem; scroll-margin-top: 1rem; }
+.hm-gsec h2 { font-size: var(--fs-4); }
+.hm-gsec h2:focus { outline: 3px solid var(--focus); outline-offset: 4px; }
+.hm-gsec h3 { font-size: var(--fs-1); font-family: var(--body); text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); font-size: var(--fs-0); }
+.hm-what { font-size: var(--fs-2); }
+.hm-steps { padding-left: 1.5em; }
+.hm-steps li { padding-left: 0.3em; line-height: 1.55; }
+.hm-steps li + li { margin-top: 0.45rem; }
+.hm-steps li::marker { font-weight: 700; color: var(--pine); }
+.hm-glossary { gap: 0.7rem 1.2rem; }
+.hm-glossary dt { color: var(--pine-ink); }
+.hm-phone { font-size: var(--fs-2); }
+
+@media print {
+  .desk-nav, .hm-fab, .hm-scrim, .hm-panel, .hm-print, .hm-toc, .hm-gsec .btn, .desk-head .btn { display: none !important; }
+  .hm-gsec { break-inside: avoid; border: 0; padding: 0 0 1rem; }
+}

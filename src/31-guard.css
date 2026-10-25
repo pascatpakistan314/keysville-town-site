@@ -1,0 +1,71 @@
+/* Guard: session dialog, masking, honeypot, access screen. */
+.gd-hp { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; visibility: hidden; }
+.gd-block { margin-bottom: 1rem; }
+.gd-frozen { margin-bottom: 1rem; }
+
+/* "Still there?" sits above everything but stays small; the page underneath keeps working. */
+.gd-dialog { position: fixed; left: 50%; bottom: max(1rem, env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 90; width: min(28rem, calc(100% - 2rem)); background: var(--surface); color: var(--fg); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); padding: 1.1rem 1.2rem; display: flex; flex-direction: column; gap: 0.7rem; }
+.gd-dialog h2 { font-size: var(--fs-2); font-family: var(--body); display: flex; align-items: center; gap: 0.5rem; }
+.gd-dialog h2 .ico { color: var(--brass); }
+.gd-dialog p { margin: 0; font-size: var(--fs-1); }
+.gd-dialog .cluster { justify-content: flex-end; }
+
+/* Password meter under the sign-in field */
+.gd-meter { display: flex; flex-direction: column; gap: 0.35rem; margin-top: 0.4rem; }
+.gd-meter-bar { display: block; height: 6px; width: 100%; border-radius: 3px; background: var(--surface-2); overflow: hidden; }
+.gd-meter-bar span { display: block; height: 100%; width: 10%; background: var(--red); }
+.gd-meter-1 span { width: 25%; background: var(--red); }
+.gd-meter-2 span { width: 50%; background: var(--brass); }
+.gd-meter-3 span { width: 75%; background: var(--pine); }
+.gd-meter-4 span { width: 100%; background: var(--pine-ink); }
+.gd-lock { margin-top: 0.4rem; }
+
+/* Masked contact details and the reveal button */
+.gd-masked { font-variant-numeric: tabular-nums; letter-spacing: 0.02em; }
+.gd-reveal { display: inline-flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+.gd-reveal .btn-sm { min-height: var(--target); }
+.gd-tools { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.8rem; }
+
+/* Redacted copy */
+.gd-copy { border: 1px dashed var(--line); border-radius: var(--r); padding: 1rem 1.2rem; background: var(--surface-2); display: flex; flex-direction: column; gap: 0.5rem; }
+.gd-copy p { margin: 0; font-size: var(--fs-0); white-space: pre-wrap; }
+.gd-copy mark { background: var(--fg); color: var(--bg); padding: 0 0.3em; border-radius: 3px; font-weight: 700; }
+.gd-copy-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 1rem; align-items: center; }
+
+/* Denied screen card */
+.gd-denied { max-width: 36rem; display: flex; flex-direction: column; gap: 0.8rem; padding: 1.6rem; }
+.gd-denied .ico-lg { color: var(--brass); }
+
+/* Start screen: account card */
+.gd-account dl { font-size: var(--fs-0); }
+.gd-roles { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.gd-queue-note { padding: 0.6rem 1.1rem; font-size: var(--fs-0); color: var(--muted); border-top: 1px solid var(--line-soft); }
+
+/* Security status table, public and desk */
+.gd-status { min-width: 40rem; }
+.gd-status td, .gd-status th { font-size: var(--fs-0); vertical-align: top; }
+.gd-status .gd-state { display: inline-flex; align-items: center; gap: 0.35rem; font-weight: 700; white-space: nowrap; }
+.gd-status .gd-state .ico { color: var(--pine); }
+.gd-state-warn .ico { color: var(--brass); }
+.gd-spot { display: grid; gap: 0.5rem; margin-top: 0.6rem; }
+.gd-spot li { display: flex; gap: 0.6rem; align-items: flex-start; padding: 0.5rem 0.8rem; border-radius: var(--r-sm); background: var(--surface-2); min-height: var(--target); }
+.gd-spot .ico { color: var(--pine); flex-shrink: 0; margin-top: 0.15rem; }
+.gd-rights-form { margin-top: 1rem; }
+
+/* Who can do what */
+.gd-matrix { min-width: 44rem; }
+.gd-matrix td { white-space: nowrap; font-size: var(--fs-0); }
+.gd-matrix td .ico { margin-right: 0.3rem; vertical-align: -0.2em; }
+.gd-cell-full .ico { color: var(--pine); }
+.gd-cell-part .ico { color: var(--brass); }
+.gd-cell-no { color: var(--muted); }
+.gd-accounts { min-width: 36rem; }
+.gd-log { display: flex; flex-direction: column; }
+.gd-log li { padding: 0.6rem 0; border-top: 1px solid var(--line-soft); font-size: var(--fs-0); }
+.gd-log li:first-child { border-top: 0; }
+.gd-freeze-on { border-color: var(--red); }
+
+@media (max-width: 40rem) {
+  .gd-dialog { width: calc(100% - 2rem); }
+  .gd-dialog .cluster .btn { flex: 1 1 auto; }
+}
